@@ -8,7 +8,39 @@
   <li>🎉 Fun Fact: Subscribe my Youtube channel: <a href="https://www.youtube.com/@Infinity_Chess_Master"> Infinity Checkmate </a></li>
 </ul>
 
-## Connect with Me!
-<div id="accounts">
-  [![My Skills](https://skillicons.dev/icons?i=js,html,css,python)](https://skillicons.dev)
-</div>
+## My Skills and Tools!
+  <a href="#">
+    <img src="https://skillicons.dev/icons?i=html">
+  </a>
+  <a href="#">
+    <img src="https://skillicons.dev/icons?i=css">
+  </a>
+  <a href="#">
+    <img src="https://skillicons.dev/icons?i=js">
+  </a>
+  <a href="#">
+    <img src="https://skillicons.dev/icons?i=py">
+  </a>
+  <a href="#">
+    <img src="https://skillicons.dev/icons?i=git">
+  </a>
+  <a href="#">
+    <img src="https://skillicons.dev/icons?i=vscode">
+  </a>
+  <a href="#">
+    <img src="https://skillicons.dev/icons?i=windows&theme=light">
+  </a>
+
+## Connect with me!
+  <a href="https://github.com/CodeWithAryamanAgrahari">
+    <img src="https://skillicons.dev/icons?i=github">
+  </a>
+    <a href="mailto:pr.aryaman.4525@gmail.com">
+    <img src="https://skillicons.dev/icons?i=gmail&theme=light">
+  </a>
+  <a href="https://discord.com/users/1391071395953508443">
+    <img src="https://skillicons.dev/icons?i=discord">
+  </a>
+  <a href="https://x.com/CodeWithAryaman">
+    <img src="https://skillicons.dev/icons?i=twitter">
+  </a>
