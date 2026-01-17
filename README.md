@@ -10,5 +10,5 @@
 
 ## Connect with Me!
 <div id="accounts">
-  [![My Skills](https://skillicons.dev/icons?i=js,html,css,python)](https://skillicons.dev)
+  ![![My Skills](https://skillicons.dev/icons?i=js,html,css,python)](https://skillicons.dev)
 </div>
