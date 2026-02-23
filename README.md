@@ -44,3 +44,6 @@
   <a href="https://x.com/CodeWithAryaman">
     <img src="https://skillicons.dev/icons?i=twitter">
   </a>
+  <a href="https://www.notion.so/729427bf07ce4f6791454b63aeb1840e">
+    <img src="https://skillicons.dev/icons?i=notion&theme=light">
+  </a>
