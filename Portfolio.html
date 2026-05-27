@@ -1,0 +1,1320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aryaman Agrahari | Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+    /*I have added internal css because external one would require a zip file for submission*/
+      :root {
+        --primary: #ffffff;
+        --primary-fixed: #00fbfb;
+        --primary-fixed-dim: #00dddd;
+        --primary-container: #00fbfb;
+        --on-primary: #003737;
+        --on-primary-fixed: #002020;
+        --on-primary-container: #007070;
+
+        --secondary: #ddb7ff;
+        --secondary-fixed: #f0dbff;
+        --secondary-fixed-dim: #ddb7ff;
+        --secondary-container: #6f00be;
+        --on-secondary: #490080;
+
+        --tertiary: #ffffff;
+        --tertiary-fixed: #fce442;
+        --tertiary-container: #fce442;
+
+        --background: #131313;
+        --on-background: #e2e2e2;
+        --surface: #131313;
+        --surface-dim: #131313;
+        --surface-bright: #393939;
+        --surface-container-lowest: #0e0e0e;
+        --surface-container-low: #1b1b1b;
+        --surface-container: #1f1f1f;
+        --surface-container-high: #2a2a2a;
+        --surface-container-highest: #353535;
+        --on-surface: #e2e2e2;
+        --on-surface-variant: #b9cac9;
+        --outline: #839493;
+        --outline-variant: #3a4a49;
+
+        --font-display: "Space Grotesk", sans-serif;
+        --font-body: "Inter", sans-serif;
+
+        --unit: 8px;
+        --margin-desktop: 64px;
+        --margin-mobile: 16px;
+        --container-max: 1280px;
+        --gutter: 24px;
+
+        --radius-default: 0.25rem;
+        --radius-lg: 0.5rem;
+        --radius-xl: 0.75rem;
+        --radius-2xl: 1rem;
+        --radius-3xl: 1.5rem;
+        --radius-full: 9999px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--background);
+        color: var(--on-background);
+        font-family: var(--font-body);
+        line-height: 1.6;
+        overflow-x: hidden;
+        min-height: 100dvh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h1,
+      h2,
+      h3,
+      .font-display {
+        font-family: var(--font-display);
+      }
+
+      .text-display {
+        font-size: 80px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+      }
+
+      .text-headline-lg {
+        font-size: 48px;
+        line-height: 1.2;
+        font-weight: 600;
+      }
+
+      .text-headline-md {
+        font-size: 32px;
+        line-height: 1.3;
+        font-weight: 500;
+      }
+
+      .text-body-lg {
+        font-size: 18px;
+        font-weight: 400;
+      }
+
+      .text-label-caps {
+        font-size: 12px;
+        line-height: 1;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .container {
+        max-width: var(--container-max);
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .section-padding {
+        padding: 128px var(--margin-mobile);
+      }
+
+      @media (min-width: 768px) {
+        .section-padding {
+          padding: 128px var(--margin-desktop);
+        }
+      }
+
+      .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 50;
+        background: rgba(19, 19, 19, 0.8);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(58, 74, 73, 0.1);
+        box-shadow: 0 0 20px rgba(0, 221, 221, 0.1);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-evenly;
+        height: 64px;
+        padding: 0 var(--margin-mobile);
+        align-items: center;
+      }
+
+      @media (min-width: 768px) {
+        .header-content {
+          padding: 0 var(--margin-desktop);
+        }
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: var(--primary-fixed-dim);
+      }
+
+      .nav {
+        display: none;
+        gap: 32px;
+      }
+
+      @media (min-width: 768px) {
+        .nav {
+          display: flex;
+        }
+      }
+
+      .nav-link {
+        text-decoration: none;
+        font-weight: 500;
+        color: var(--on-surface-variant);
+        transition: color 0.3s;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-fixed);
+      }
+
+      .nav-link.active {
+        color: var(--primary-fixed);
+        font-weight: 700;
+        border-bottom: 2px solid var(--primary-fixed);
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(0, 221, 221, 0.1);
+        border-radius: var(--radius-2xl);
+        transition: all 0.3s ease;
+      }
+
+      .neon-glow {
+        box-shadow: 0 0 20px rgba(0, 221, 221, 0.3);
+      }
+
+      .scanning-line {
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--primary-fixed-dim),
+          transparent
+        );
+        animation: scan 3s infinite linear;
+      }
+
+      @keyframes scan {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      .blob {
+        position: absolute;
+        filter: blur(80px);
+        z-index: -1;
+        border-radius: var(--radius-full);
+        animation: float-blob 20s infinite alternate ease-in-out;
+      }
+
+      @keyframes float-blob {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(40px, 40px);
+        }
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 16px 32px;
+        border-radius: var(--radius-xl);
+        text-decoration: none;
+        text-align: center;
+        transition: all 0.3s;
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-container);
+        color: var(--on-primary-fixed);
+        font-family: var(--font-display);
+      }
+
+      .btn-primary:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 221, 221, 0.5);
+      }
+
+      .btn-outline {
+        background: rgba(255, 255, 255, 0.03);
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(0, 221, 221, 0.1);
+        color: var(--primary-fixed-dim);
+        font-family: var(--font-display);
+      }
+
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 100px var(--margin-mobile);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      @media (min-width: 768px) {
+        .hero-grid {
+          grid-template-columns: 1.2fr 0.8fr;
+          text-align: left;
+        }
+        .hero {
+          padding: 0 var(--margin-desktop);
+        }
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .hero-content {
+          text-align: left;
+        }
+      }
+
+      .hero-title {
+        color: var(--primary-fixed-dim);
+        margin-bottom: 16px;
+      }
+
+      .hero-subtitle {
+        font-size: 24px;
+        color: var(--secondary-fixed-dim);
+        margin-bottom: 24px;
+      }
+
+      .hero-description {
+        color: var(--on-surface-variant);
+        margin-bottom: 40px;
+        max-width: 600px;
+      }
+
+      .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      @media (min-width: 640px) {
+        .hero-btns {
+          flex-direction: row;
+          justify-content: center;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .hero-btns {
+          justify-content: flex-start;
+        }
+      }
+
+      .hero-image-wrapper {
+        display: none;
+        position: relative;
+      }
+
+      @media (min-width: 768px) {
+        .hero-image-wrapper {
+          display: block;
+        }
+      }
+
+      .hero-image-card {
+        aspect-ratio: 1/1;
+        padding: 8px;
+        overflow: hidden;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--radius-xl);
+        filter: grayscale(1);
+        transition: filter 0.7s;
+      }
+
+      .hero-image:hover {
+        filter: grayscale(0);
+      }
+
+      .floating-icon {
+        position: absolute;
+        bottom: -16px;
+        right: -16px;
+        width: 128px;
+        height: 128px;
+        background: rgba(0, 251, 251, 0.2);
+        border-radius: var(--radius-full);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.7;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .bento-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--gutter);
+      }
+
+      @media (min-width: 768px) {
+        .bento-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .bento-main {
+          grid-column: span 2;
+        }
+      }
+
+      .bento-card {
+        padding: 32px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .bento-icon-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 16px;
+        opacity: 0.1;
+        font-size: 8rem;
+        transition: opacity 0.3s;
+      }
+
+      .bento-card:hover .bento-icon-bg {
+        opacity: 0.3;
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .skill-tag {
+        padding: 6px 16px;
+        background: var(--surface-container-high);
+        color: var(--primary-fixed-dim);
+        border-radius: var(--radius-full);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .aux-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .aux-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--on-surface-variant);
+      }
+
+      .aux-item span.material-symbols-outlined {
+        color: var(--secondary-fixed);
+      }
+
+      .stack-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      @media (min-width: 768px) {
+        .stack-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .stack-grid {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+
+      .stack-card {
+        padding: 24px;
+        text-align: center;
+      }
+
+      .stack-card:hover {
+        border-color: var(--primary-fixed);
+      }
+
+      .stack-icon {
+        font-size: 2.5rem;
+        color: var(--primary-fixed);
+        margin-bottom: 16px;
+        transition: transform 0.3s;
+        display: block;
+      }
+
+      .stack-card:hover .stack-icon {
+        transform: scale(1.1);
+      }
+
+      .project-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow: hidden;
+      }
+
+      @media (min-width: 768px) {
+        .project-card {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .project-img-box {
+        height: 256px;
+        background: var(--surface-container);
+        overflow: hidden;
+      }
+
+      @media (min-width: 768px) {
+        .project-img-box {
+          height: auto;
+        }
+      }
+
+      .project-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s;
+      }
+
+      .project-card:hover .project-img {
+        transform: scale(1.05);
+      }
+
+      .project-info {
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      @media (min-width: 768px) {
+        .project-info {
+          padding: 48px;
+        }
+      }
+
+      .project-tags {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .tag-badge {
+        font-size: 10px;
+        padding: 2px 8px;
+        border: 1px solid rgba(0, 251, 251, 0.3);
+        border-radius: 4px;
+        color: var(--primary-fixed-dim);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      @media (min-width: 640px) {
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .services-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .service-card {
+        padding: 40px;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .service-icon-box {
+        width: 64px;
+        height: 64px;
+        border-radius: var(--radius-2xl);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+      }
+
+      .contact-box {
+        padding: 48px;
+        border-top: 1px solid rgba(0, 251, 251, 0.2);
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+
+      .contact-links {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 64px;
+      }
+
+      @media (min-width: 768px) {
+        .contact-links {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .contact-link-card {
+        padding: 32px;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .contact-link-card:hover {
+        background: rgba(0, 251, 251, 0.1);
+      }
+
+      .footer {
+        border-top: 1px solid rgba(58, 74, 73, 0.1);
+        padding: 64px var(--margin-mobile);
+        width: 100vw;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+      }
+
+      @media (min-width: 768px) {
+        .footer-content {
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 64px var(--margin-desktop);
+        }
+      }
+
+      @keyframes reveal {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      section {
+        view-timeline-name: --section;
+        view-timeline-axis: block;
+        animation-timeline: --section;
+        animation-name: reveal;
+        animation-range: entry 10% cover 30%;
+        animation-fill-mode: both;
+      }
+
+      @supports not (animation-timeline: --section) {
+        section {
+          animation: reveal 1s ease-out forwards;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .text-display {
+          font-size: 48px;
+        }
+        .text-headline-lg {
+          font-size: 32px;
+        }
+        .text-headline-md {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content container">
+        <a class="logo" href="#home">
+          <span class="material-symbols-outlined">terminal</span>
+          <span class="text-headline-md">ARYAMAN</span>
+        </a>
+        <nav class="nav">
+          <a class="nav-link active" href="#home">Home</a>
+          <a class="nav-link" href="#work">Work</a>
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+        <div style="padding: 8px; border-radius: 50%; cursor: pointer">
+        </div>
+      </div>
+      <div class="scanning-line"></div>
+    </header>
+    <main style="position: relative">
+      <div
+        class="blob"
+        style="
+          top: 80px;
+          left: -80px;
+          width: 288px;
+          height: 288px;
+          background: rgba(0, 251, 251, 0.2);
+        "
+      ></div>
+      <div
+        class="blob"
+        style="
+          top: 50%;
+          right: -80px;
+          width: 384px;
+          height: 384px;
+          background: rgba(111, 0, 190, 0.1);
+          animation-delay: -5s;
+        "
+      ></div>
+      <section class="hero container" id="home">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <h1 class="text-display hero-title">ARYAMAN AGRAHARI</h1>
+            <p class="hero-subtitle">
+              Frontend Developer • AI Generalist • Content Creator
+            </p>
+            <p class="text-body-lg hero-description">
+              I build modern web experiences, create digital content, work with
+              AI tools, and help brands grow online.
+            </p>
+            <div class="hero-btns">
+              <a class="btn btn-primary text-label-caps" href="#work"
+                >VIEW PROJECTS</a
+              >
+              <a class="btn btn-outline text-label-caps" href="#contact"
+                >CONTACT ME</a
+              >
+            </div>
+          </div>
+          <div class="hero-image-wrapper">
+            <div class="glass-card hero-image-card">
+              <img
+                alt="Developer Setup"
+                class="hero-image"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2YcuxwsGHkV9s45FZaS7bg2qYxXfQJcA384i8uWSZ2YYwKTqMTjBhpQ0AEgoN23UThgOeFU3ENeb_zZtOqM78f1ZDKcCO56Ze1eoQ7knZZpCmzuCzUtniEzzJ5xn6RaXmyWllpIuUh7t0HlRdceRDQP7_nSz25wLDNdWkUqaBQ_24YRM186gCTVGs3jPyx802iJBPrqCGZ8iPM2nSlDlM6BBslThmh7XRaDEyb8GYB1oidjt2rgBKmXiPncZpyH5pzx2On4saIdg"
+              />
+            </div>
+            <div class="floating-icon">
+              <span
+                class="material-symbols-outlined"
+                style="font-size: 48px; color: var(--primary-fixed)"
+                >bolt</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-padding container" id="about">
+        <h2
+          class="text-headline-lg"
+          style="
+            color: var(--primary-fixed-dim);
+            text-align: center;
+            margin-bottom: 64px;
+          "
+        >
+          About Me
+        </h2>
+        <div class="bento-grid">
+          <div class="bento-main glass-card bento-card">
+            <h3
+              class="text-headline-md"
+              style="color: var(--primary-fixed); margin-bottom: 16px"
+            >
+              The Visionary Developer
+            </h3>
+            <p
+              class="text-body-lg"
+              style="color: var(--on-surface-variant); margin-bottom: 24px"
+            >
+              As a multi-disciplinary creator, I merge technical proficiency
+              with creative intuition. My journey is defined by
+              <strong>fast learning</strong> and
+              <strong>AI-driven workflows</strong>, allowing me to deliver
+              high-quality results across frontend development, video editing,
+              and graphic design.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">FRONTEND</span>
+              <span class="skill-tag">AI SPECIALIST</span>
+              <span class="skill-tag">CONTENT WRITER</span>
+            </div>
+          </div>
+          <div
+            class="glass-card bento-card"
+            style="
+              border-left: 4px solid var(--secondary-container);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            "
+          >
+            <h3
+              class="text-label-caps"
+              style="color: var(--secondary-fixed-dim); margin-bottom: 16px"
+            >
+              AUXILIARY SKILLS
+            </h3>
+            <ul class="aux-list">
+              <li class="aux-item">
+                <span class="material-symbols-outlined">translate</span>
+                <span>Translation Services</span>
+              </li>
+              <li class="aux-item">
+                <span class="material-symbols-outlined">edit_note</span>
+                <span>Technical Writing</span>
+              </li>
+              <li class="aux-item">
+                <span class="material-symbols-outlined">keyboard</span>
+                <span>Fast Typing &amp; Entry</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section-padding"
+        id="skills"
+        style="background: rgba(14, 14, 14, 0.5)"
+      >
+        <div class="container">
+          <div style="text-align: center; margin-bottom: 64px">
+            <h2
+              class="text-headline-lg"
+              style="color: var(--primary-fixed-dim); margin-bottom: 16px"
+            >
+              Technical Stack
+            </h2>
+            <p style="color: var(--on-surface-variant)">
+              Tools and technologies I master
+            </p>
+          </div>
+          <div class="stack-grid">
+            <div class="glass-card stack-card">
+              <span class="material-symbols-outlined stack-icon">html</span>
+              <span class="text-label-caps">HTML5</span>
+            </div>
+            <div class="glass-card stack-card">
+              <span class="material-symbols-outlined stack-icon">css</span>
+              <span class="text-label-caps">CSS3</span>
+            </div>
+            <div class="glass-card stack-card">
+              <span class="material-symbols-outlined stack-icon"
+                >javascript</span
+              >
+              <span class="text-label-caps">JS / ES6</span>
+            </div>
+            <div class="glass-card stack-card">
+              <span class="material-symbols-outlined stack-icon">code</span>
+              <span class="text-label-caps">PYTHON</span>
+            </div>
+            <div class="glass-card stack-card">
+              <span class="material-symbols-outlined stack-icon">devices</span>
+              <span class="text-label-caps">RESPONSIVE</span>
+            </div>
+            <div class="glass-card stack-card">
+              <span class="material-symbols-outlined stack-icon"
+                >architecture</span
+              >
+              <span class="text-label-caps">UI/UX</span>
+            </div>
+            <div class="glass-card stack-card">
+              <span class="material-symbols-outlined stack-icon"
+                >smart_toy</span
+              >
+              <span class="text-label-caps">AI TOOLS</span>
+            </div>
+            <div class="glass-card stack-card">
+              <span class="material-symbols-outlined stack-icon">movie</span>
+              <span class="text-label-caps">VIDEO EDITING</span>
+            </div>
+            <div class="glass-card stack-card">
+              <span class="material-symbols-outlined stack-icon">palette</span>
+              <span class="text-label-caps">GRAPHICS</span>
+            </div>
+            <div class="glass-card stack-card">
+              <span class="material-symbols-outlined stack-icon"
+                >rocket_launch</span
+              >
+              <span class="text-label-caps">DEPLOYMENT</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-padding container" id="work">
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 64px;
+            gap: 16px;
+          "
+        >
+          <div style="width: 100%">
+            <h2
+              class="text-headline-lg"
+              style="color: var(--primary-fixed-dim)"
+            >
+              Featured Work
+            </h2>
+            <p style="color: var(--on-surface-variant); margin-top: 8px">
+              Solving problems through code and design.
+            </p>
+          </div>
+          <a
+            class="text-label-caps"
+            href="https://github.com/CodeWithAryamanAgrahari"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              color: var(--primary-fixed);
+              text-decoration: none;
+            "
+          >
+            VIEW MORE ON GITHUB
+            <span class="material-symbols-outlined" style="font-size: 16px"
+              >arrow_outward</span
+            >
+          </a>
+        </div>
+        <div class="glass-card project-card">
+          <div class="project-img-box">
+            <img
+              alt="Top 10 Project"
+              class="project-img"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlgNP87-HHZ5no2xNIYFYgEZ2RBXa_8qtDHquTbNumUPUaD_fK6o5tRffJBmD3eL1PXUuHwnSqhL1Ux8x_EV-6Vpa_OkxkZEAu2QELqjcLYMODra4g4xDv7B39elWIlc89tL2I9tKMXVcF3bcaZ5NtQv-9byhBYBJ7A7rD-uRpDNA6VhSGteazT42VUgdhOM1xt2Kq9tfDpzNug_NmBlEp5eS-i8AIl_0euf0sM3t0NNqbNS2pWmRwiH8ld2TYXMj0QBE9sw7Cnzs"
+            />
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="tag-badge">EXCLUSIVE</span>
+              <span
+                class="tag-badge"
+                style="
+                  border-color: var(--outline-variant);
+                  color: var(--on-surface-variant);
+                "
+                >WEB DEV</span
+              >
+            </div>
+            <h3
+              class="text-headline-md"
+              style="color: var(--primary-fixed-dim); margin-bottom: 16px"
+            >
+              Top 10 — Exclusive Web Project
+            </h3>
+            <p
+              class="text-body-lg"
+              style="color: var(--on-surface-variant); margin-bottom: 32px"
+            >
+              A high-performance web architecture showcase demonstrating
+              advanced state management and premium glassmorphic UI components.
+              This project highlights my capability to build scalable,
+              production-ready frontend ecosystems.
+            </p>
+            <div>
+              <a
+                class="btn btn-primary text-label-caps"
+                href="https://github.com/CodeWIthAryamanAgrahari/Top-10-An-exclusive-Web-Development-Project.git"
+                style="
+                  padding: 12px 24px;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 8px;
+                "
+              >
+                <span class="material-symbols-outlined" style="font-size: 18px"
+                  >code</span
+                >
+                GITHUB REPO
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section-padding"
+        id="services"
+        style="background: rgba(27, 27, 27, 0.5)"
+      >
+        <div class="container">
+          <h2
+            class="text-headline-lg"
+            style="
+              color: var(--primary-fixed-dim);
+              text-align: center;
+              margin-bottom: 64px;
+            "
+          >
+            Services Offered
+          </h2>
+          <div class="services-grid">
+            <div class="glass-card service-card">
+              <div
+                class="service-icon-box"
+                style="background: rgba(0, 251, 251, 0.2)"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="color: var(--primary-fixed); font-size: 32px"
+                  >web</span
+                >
+              </div>
+              <h3
+                class="text-headline-md"
+                style="color: var(--on-surface); margin-bottom: 12px"
+              >
+                Website Development
+              </h3>
+              <p style="color: var(--on-surface-variant)">
+                Building responsive, lightning-fast websites with modern
+                frameworks and pixel-perfect design.
+              </p>
+            </div>
+            <div class="glass-card service-card">
+              <div
+                class="service-icon-box"
+                style="background: rgba(111, 0, 190, 0.2)"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="color: var(--secondary-fixed); font-size: 32px"
+                  >auto_awesome</span
+                >
+              </div>
+              <h3
+                class="text-headline-md"
+                style="color: var(--on-surface); margin-bottom: 12px"
+              >
+                AI Automation
+              </h3>
+              <p style="color: var(--on-surface-variant)">
+                Integrating AI agents and automation workflows to streamline
+                business operations and content production.
+              </p>
+            </div>
+            <div class="glass-card service-card">
+              <div
+                class="service-icon-box"
+                style="background: rgba(252, 228, 66, 0.2)"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="color: var(--tertiary-fixed); font-size: 32px"
+                  >history_edu</span
+                >
+              </div>
+              <h3
+                class="text-headline-md"
+                style="color: var(--on-surface); margin-bottom: 12px"
+              >
+                Content Writing
+              </h3>
+              <p style="color: var(--on-surface-variant)">
+                Crafting compelling narratives, technical documentation, and
+                SEO-optimized articles for digital brands.
+              </p>
+            </div>
+            <div class="glass-card service-card">
+              <div
+                class="service-icon-box"
+                style="background: rgba(0, 251, 251, 0.2)"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="color: var(--primary-fixed); font-size: 32px"
+                  >video_library</span
+                >
+              </div>
+              <h3
+                class="text-headline-md"
+                style="color: var(--on-surface); margin-bottom: 12px"
+              >
+                Video Editing
+              </h3>
+              <p style="color: var(--on-surface-variant)">
+                High-impact visual storytelling through advanced motion graphics
+                and cinematic editing techniques.
+              </p>
+            </div>
+            <div class="glass-card service-card">
+              <div
+                class="service-icon-box"
+                style="background: rgba(111, 0, 190, 0.2)"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="color: var(--secondary-fixed); font-size: 32px"
+                  >brush</span
+                >
+              </div>
+              <h3
+                class="text-headline-md"
+                style="color: var(--on-surface); margin-bottom: 12px"
+              >
+                Graphic Design
+              </h3>
+              <p style="color: var(--on-surface-variant)">
+                Creating iconic brand identities, social media assets, and
+                digital illustrations that stand out.
+              </p>
+            </div>
+            <div class="glass-card service-card">
+              <div
+                class="service-icon-box"
+                style="background: rgba(252, 228, 66, 0.2)"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="color: var(--tertiary-fixed); font-size: 32px"
+                  >handshake</span
+                >
+              </div>
+              <h3
+                class="text-headline-md"
+                style="color: var(--on-surface); margin-bottom: 12px"
+              >
+                Freelance Solutions
+              </h3>
+              <p style="color: var(--on-surface-variant)">
+                Bespoke technical and creative services tailored to meet
+                specific project goals and deadlines.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-padding container" id="contact">
+        <div class="glass-card contact-box">
+          <div style="margin-bottom: 64px">
+            <h2
+              class="text-headline-lg"
+              style="color: var(--primary-fixed-dim)"
+            >
+              Let's Connect
+            </h2>
+            <p style="color: var(--on-surface-variant); margin-top: 16px">
+              Available for new opportunities and collaborations.
+            </p>
+          </div>
+          <div class="contact-links">
+            <a
+              class="glass-card contact-link-card"
+              href="https://github.com/CodeWithAryamanAgrahari"
+            >
+              <span
+                class="material-symbols-outlined"
+                style="
+                  font-size: 40px;
+                  color: var(--primary-fixed);
+                  margin-bottom: 16px;
+                "
+                >terminal</span
+              >
+              <div
+                class="text-label-caps"
+                style="color: var(--on-surface); margin-bottom: 4px"
+              >
+                GITHUB
+              </div>
+              <div style="color: var(--on-surface-variant); font-size: 14px">
+                @CodeWithAryaman
+              </div>
+            </a>
+            <a class="glass-card contact-link-card" href="#">
+              <span
+                class="material-symbols-outlined"
+                style="
+                  font-size: 40px;
+                  color: var(--primary-fixed);
+                  margin-bottom: 16px;
+                "
+                >forum</span
+              >
+              <div
+                class="text-label-caps"
+                style="color: var(--on-surface); margin-bottom: 4px"
+              >
+                DISCORD
+              </div>
+              <div style="color: var(--on-surface-variant); font-size: 14px">
+                codewitharyaman
+              </div>
+            </a>
+            <a
+              class="glass-card contact-link-card"
+              href="mailto:pr.aryaman.4525@gmail.com"
+            >
+              <span
+                class="material-symbols-outlined"
+                style="
+                  font-size: 40px;
+                  color: var(--primary-fixed);
+                  margin-bottom: 16px;
+                "
+                >alternate_email</span
+              >
+              <div
+                class="text-label-caps"
+                style="color: var(--on-surface); margin-bottom: 4px"
+              >
+                EMAIL
+              </div>
+              <div
+                style="
+                  color: var(--on-surface-variant);
+                  font-size: 14px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                "
+              >
+                pr.aryaman.4525@gmail.com
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" style="background-color: #171717">
+      <div class="footer-content container">
+        <div style="text-align: center">
+          <span
+            class="text-headline-md"
+            style="color: var(--primary-fixed-dim); display: block"
+            >ARYAMAN</span
+          >
+          <p style="color: var(--on-surface-variant); margin-top: 8px">
+            Built by Aryaman Agrahari © 2024
+          </p>
+        </div>
+        <div style="display: flex; gap: 32px">
+          <a
+            class="text-label-caps"
+            href="https://github.com/CodeWithAryamanAgrahari"
+            style="
+              text-decoration: none;
+              color: var(--on-surface-variant);
+              transition: color 0.3s;
+            "
+            >GITHUB</a
+          >
+          <a
+            class="text-label-caps"
+            href="https://discord.com/users/1391071395953508443"
+            style="
+              text-decoration: none;
+              color: var(--on-surface-variant);
+              transition: color 0.3s;
+            "
+            >DISCORD</a
+          >
+          <a
+            class="text-label-caps"
+            href="mailto:pr.aryaman.4525@gmail.com"
+            style="
+              text-decoration: none;
+              color: var(--on-surface-variant);
+              transition: color 0.3s;
+            "
+            >EMAIL</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
